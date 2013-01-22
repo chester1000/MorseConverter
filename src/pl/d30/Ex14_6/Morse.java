@@ -130,7 +130,7 @@ public class Morse {
         
         if(buff.length()>0 && toLetter(buff)!=null) {
             String newLet = toLetter(buff);
-            if( newLet=="" ) return;
+            if( newLet=="" ) return; // invalid  . and - combination would return inprecise result
             decode( code.substring(1), decoded + newLet , code.substring(0,1), id ); // save letter
         }
         decode(code.substring(1), decoded, buff + code.substring(0,1), id ); // try with longer buffore
